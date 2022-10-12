@@ -6,12 +6,12 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class MorhipoPage {
-   /* public MorhipoPage(){
+    public MorhipoPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy(xpath = "//*[@id='pw-search-input']")
     public WebElement morhipoSearchBox;
 
     @FindBy (xpath = "//*[@id='total-product-count']")
-    public WebElement morhipoSonucYazisiWE;*/
+    public WebElement morhipoSonucYazisiWE;
 }
