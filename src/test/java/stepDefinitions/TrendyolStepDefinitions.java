@@ -30,30 +30,36 @@ public class TrendyolStepDefinitions {
 
     @Then("eposta ve sifre boxlarini doldurur ve giris yapar")
     public void epostaVeSifreBoxlariniDoldururVeGirisYapar() {
+        //ReusableMethods.waitFor(1);
         trendyolPage.eposta.sendKeys("oguzsaltuktest@gmail.com");
-        trendyolPage.sifre.sendKeys("Seleniumtest01", Keys.ENTER);
+       // ReusableMethods.waitFor(1);
+        trendyolPage.sifre.sendKeys("Seleniumtest01",Keys.ENTER);
+       // ReusableMethods.waitFor(1);
+
     }
     @Then("Elektronik basligi altinda Bilgisayar & Tablet alt basligina tiklar")
     public void elektronik_basligi_altinda_bilgisayar_tablet_alt_basligina_tiklar() {
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         actions.moveToElement(trendyolPage.elektronikBaslik).perform();
+        ReusableMethods.waitFor(1);
         trendyolPage.bilgisayarTablet.click();
     }
 
     @Then("sol taraftaki ilgili kategorilerden Bilgisayar a tiklar")
     public void solTaraftakiIlgiliKategorilerdenATiklar() {
+        ReusableMethods.waitFor(1);
         trendyolPage.bilgisayar.click();
     }
 
     @Then("sol tarafta marka kategorisi altinda Apple i secer")
     public void solTaraftaMarkaKategorisiAltindaISecer() {
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         trendyolPage.appleCheckBox.click();
     }
 
     @And("ilk urune tiklar")
     public void ilkUruneTiklar() {
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         actions.sendKeys(Keys.DOWN).perform();
         trendyolPage.ilkUrun.click();
         ArrayList<String> windows = new ArrayList<>(Driver.getDriver().getWindowHandles());
@@ -62,11 +68,13 @@ public class TrendyolStepDefinitions {
 
     @And("kullanici urunu incelemek icin urun fotografinin uzerine mouse'la gider")
     public void kullaniciUrunuIncelemekIcinUrunFotografininUzerineMouseLaGider() {
+        ReusableMethods.waitFor(1);
         actions.sendKeys(Keys.DOWN).perform();
         actions.moveToElement(trendyolPage.urunResmi).perform();
     }
     @And("urun fotografinin altindaki urunun diger fotograflarini inceler")
     public void urunFotografininAltindakiUrununDigerFotograflariniInceler() {
+        ReusableMethods.waitFor(1);
         actions.sendKeys(Keys.DOWN).perform();
         List<WebElement> urunFotolari= trendyolPage.urunFotolariList;
         for (WebElement w:urunFotolari
@@ -78,16 +86,20 @@ public class TrendyolStepDefinitions {
     }
     @And("urunu sepete ekler")
     public void urunuSepeteEkler() {
+        ReusableMethods.waitFor(1);
         trendyolPage.sepeteEkle.click();
     }
     @And("sepete gider")
     public void sepeteGider() {
+        ReusableMethods.waitFor(1);
         trendyolPage.sepetim.click();
     }
 
     @And("sepeti onaylar")
     public void sepetiOnaylar() {
+        ReusableMethods.waitFor(1);
         trendyolPage.anladim.click();
+        ReusableMethods.waitFor(1);
         trendyolPage.sepetiOnayla.click();
     }
 
@@ -97,11 +109,13 @@ public class TrendyolStepDefinitions {
     }
     @And("kaydet ve devam et butonuna tiklar")
     public void kaydetVeDevamEtButonunaTiklar() {
+        ReusableMethods.waitFor(1);
         trendyolPage.kaydetDevamEt.click();
     }
 
     @And("odeme secenekleri sayfasinda oldugunu dogrular")
     public void odemeSecenekleriSayfasindaOldugunuDogrular() {
+        ReusableMethods.waitFor(1);
         Assert.assertTrue(trendyolPage.odemeSecenekleri.isDisplayed());
     }
 
@@ -120,16 +134,25 @@ public class TrendyolStepDefinitions {
 
     @And("Lutfen belirtilen alanlari kontrol ediniz uyarisini dogrular")
     public void lutfenBelirtilenAlanlariKontrolEdinizUyarisiniDogrular() {
+        ReusableMethods.waitFor(2);
         Driver.getDriver().switchTo().defaultContent();
         Assert.assertTrue(trendyolPage.uyari.isDisplayed());
     }
 
     @And("siparis ozeti alaninin ekran resmini alir")
     public void siparisOzetiAlanininEkranResminiAlir() throws IOException {
+        ReusableMethods.waitFor(1);
         ReusableMethods.getScreenshotWebElement("siparis ozet",trendyolPage.siparisOzeti);
     }
     @Then("cerezleri kabul eder")
     public void cerezleriKabulEder() {
+        ReusableMethods.waitFor(1);
         trendyolPage.cerez.click();
+    }
+
+    @And("sayfalari kapatir")
+    public void sayfalariKapatir() {
+        ReusableMethods.waitFor(1);
+        Driver.quitDriver();
     }
 }

@@ -35,7 +35,7 @@ public class TrendyolPage {
     @FindBy (xpath = "//*[@id='login-password-input']")
     public WebElement sifre;
 
-    @FindBy (xpath = "(//*[@class='tab-link'])[8]")
+    @FindBy (xpath = "(//a[@class='category-header'])[9]")
     public WebElement elektronikBaslik;
 
     @FindBy (xpath = "//*[.='Bilgisayar & Tablet']")
@@ -44,7 +44,7 @@ public class TrendyolPage {
     @FindBy (xpath = "//div[text()='Bilgisayar']")
     public WebElement bilgisayar;
 
-    @FindBy (xpath = "(//div[@class='chckbox'])[5]")
+    @FindBy (xpath = "//div[text()='Apple']")
     public WebElement appleCheckBox;
 
     @FindBy (xpath = "(//div[@class='fltr-cntnr-ttl-area'])[2]")

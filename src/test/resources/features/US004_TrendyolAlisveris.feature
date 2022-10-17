@@ -1,6 +1,7 @@
 Feature: Trendyol Alisveris Testi
 
   Scenario: Urunler sepete eklendikten sonra odeme sayfasina gidilebilmeli
+
     Given kullanici "trendyolUrl" anasayfaya gider
     Then cerezleri kabul eder
     Then trendyol ana sayfasindaki giris yap butonuna tiklar
@@ -20,4 +21,5 @@ Feature: Trendyol Alisveris Testi
     And kart bilgilerini girer
     And Lutfen belirtilen alanlari kontrol ediniz uyarisini dogrular
     And siparis ozeti alaninin ekran resmini alir
-    #And sayfayi kapatir
+    And sayfalari kapatir
+
