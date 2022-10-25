@@ -124,6 +124,10 @@ public class ReusableMethods {
         }
     }
     //===============Explicit Wait==============//
+   // public static WebElement waitForInVisibility(WebElement element, int timeout){
+   //     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
+    //    return wait.until(ExpectedConditions.invisibilityOf(element));
+    //}
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));

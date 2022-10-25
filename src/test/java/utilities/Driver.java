@@ -22,7 +22,11 @@ public class Driver {
             switch (ConfigReader.getProperty("browser")){
                 case "chrome" :
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    ChromeOptions options =new ChromeOptions();
+                    options.addArguments("--disable-blink-features");
+                    options.addArguments("--disable-blink-features=AutomationControlled");
+                    options.addArguments("--disable-extensions");
+                    driver = new ChromeDriver(options=options);
                     break;
                 case "safari" :
                     WebDriverManager.safaridriver().setup();

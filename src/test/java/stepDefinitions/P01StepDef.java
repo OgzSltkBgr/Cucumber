@@ -39,6 +39,7 @@ public class P01StepDef {
    @Then("makas aratiniz")
    public void makasAratiniz() {
        p01.trendyolSearchBox.sendKeys("makas",Keys.ENTER);
+       ReusableMethods.waitFor(1);
        titleTrendyol=Driver.getDriver().getTitle();
    }
 
@@ -81,7 +82,9 @@ public class P01StepDef {
    public void onceUrunSayisiFazlaOlanSiteyiKapatiniz() {
        ReusableMethods.waitFor(3);
        if (urunSayisiTrendyol>urunSayisiMorhipo){
-           Driver.getDriver().switchTo().window(titleTrendyol).close();
+           ReusableMethods.switchToWindow(titleTrendyol);
+           ReusableMethods.waitFor(3);
+           Driver.closeDriver();
        }else {
            Driver.getDriver().switchTo().window(titleMorhipo).close();
        }
@@ -89,6 +92,6 @@ public class P01StepDef {
    }
    @And("Sonra diger sayfayida kapatiniz")
    public void sonraDigerSayfayidaKapatiniz()  {
-       Driver.quitDriver();
-   }
+       Driver.closeDriver();
+   } 
 }
