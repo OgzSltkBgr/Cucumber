@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-reports/cucumber.xml",
                 "rerun:target/failedRerun.txt"
         },
-        features = "src/test/resources/features/GridFeatures/grid_test_case.feature",
+        features = "src/test/resources/features/grid_test_case.feature",
         glue = {"stepDefinitions"},
         tags = "@grid_chrome",
         dryRun = false
