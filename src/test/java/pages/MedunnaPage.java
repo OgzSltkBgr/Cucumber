@@ -30,6 +30,9 @@ public class MedunnaPage {
     @FindBy (xpath = "(//*[text()='My Appointments'])[1]")
     public WebElement myAppointments;
 
+    @FindBy (xpath = "//h2[@id='appointment-heading']")
+    public WebElement appointmentsTitle;
+
     @FindBy (xpath = "//*[text()='Edit']")
     public WebElement edit;
 
@@ -63,7 +66,7 @@ public class MedunnaPage {
     @FindBy (xpath = "//*[@id='save-entity']")
     public WebElement appointmentSave;
 
-    @FindBy (xpath = "//*[text()='The Appointment is updated with identifier 302324']")
+    @FindBy (xpath = "//*[text()='The Appointment is updated with identifier 333769']")
     public WebElement appointmentUpdateMessage;
 
     @FindBy (xpath = "(//tbody/tr/td)[1]")
@@ -81,7 +84,7 @@ public class MedunnaPage {
     @FindBy (xpath = "(//tbody/tr/td)[12]")
     public WebElement hastaPhysician;
 
-    @FindBy (xpath = "//div[@class='invalid-feedback']")
+    @FindBy (xpath = "//div[text()='This field is required.']")
     public WebElement fieldRequiredMessage;
 
     @FindBy(xpath = "//*[@id='appointment-status']")

@@ -156,11 +156,15 @@ public class MedunnaStepDef {
     @Then("Doktor This field is required. uyarisinin olmadigini dogrular")
     public void doktorThisfieldisrequiredUyarisininOlmadiginiDogrular() {
         ReusableMethods.waitFor(3);
-        Assert.assertFalse(medunnaPage.fieldRequiredMessage.isDisplayed());
+        Driver.getDriver().navigate().back();
+        ReusableMethods.waitFor(2);
+        Assert.assertTrue(medunnaPage.appointmentsTitle.isDisplayed());
+
     }
 
     @Then("Doktor Status menusu altinda Completed secer")
     public void doktorStatusMenusuAltindaCompletedSecer() throws IOException {
+        medunnaPage.edit.click();
         ReusableMethods.waitFor(1);
         ReusableMethods.jsExecutorScrool(medunnaPage.myPages);
         Select select = new Select(medunnaPage.appointmentStatusDD);

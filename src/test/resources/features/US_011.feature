@@ -12,7 +12,7 @@ Feature:US_011 "My Appointments" Physician (Doctor) tarafından düzenlenebilmel
     Then Doktor anemnesis, treatment, diagnosis alanlarini doldurur
     Then Doktor Prescription ve Description alanlarini gerekli ise doldurur
     Then Doktor save butonuna tiklar
-    And  Doktor "The Appointment is updated with identifier 302324" mesajini dogrular
+    And  Doktor "The Appointment is updated with identifier 333769" mesajini dogrular
 
   Scenario: TC02 Bir randevu guncellendiginde; kullanici (doktor), hastanin "id, start ve end date, Status, physician ve patient" bilgilerini görebilmeli.
     Then Doktor My Pages butonuna tiklar
